@@ -8,6 +8,7 @@
 
 from services.wiki_service import search_wikipedia, get_page_content
 from services.chunker import chunk_text
+from rag.vector_store import create_vector_store
 
 
 results = search_wikipedia("Lionel Messi")
@@ -30,5 +31,9 @@ chunks = chunk_text(page["content"])
 
 print(f"Number of chunks: {len(chunks)}")
 
-if chunks:
-    print(chunks[0][:500])
+# if chunks:
+#     print(chunks[0][:500])
+
+vector_store = create_vector_store(chunks)
+
+print("Vector store created with collection name 'sports_wiki'")

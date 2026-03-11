@@ -5,16 +5,7 @@ def search_wikipedia(query: str):
     results = wikipedia.search(query)
     return results
 
-# def get_page_content(title: str):
-#     """
-#     Fetch full contetnt of a Wikipedia page.
-#     """
-#     page = wikipedia.page(title)
-#     return {
-#         "title": page.title,
-#         "content": page.content,
-#         "url": page.url
-#     }
+
 
 def get_page_content(title: str):
     """
